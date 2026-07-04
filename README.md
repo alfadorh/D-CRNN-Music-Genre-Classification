@@ -10,10 +10,10 @@ Dengan menggunakan dataset **GTZAN**, ekstraksi fitur **Mel-Frequency Cepstral C
 
 ## 👥 Penulis & Afiliasi
 
-*   **Mochammad Rizqul Fatichin** (16026231032@student.its.ac.id)
-*   **Alfado Rafly Hermawan** (26026231041@student.its.ac.id)
-*   **Raynaldi Anggiat Samuel Siahaan** (35026201037@student.its.ac.id)
-*   **Rarasmaya Indraswari** (Corresponding Author: 6026231032@student.its.ac.id)
+*   **Mochammad Rizqul Fatichin** (Corresponding Author: 6026231032@student.its.ac.id)
+*   **Alfado Rafly Hermawan** (6026231041@student.its.ac.id)
+*   **Raynaldi Anggiat Samuel Siahaan** (5026201037@student.its.ac.id)
+*   **Rarasmaya Indraswari** (raras@its.ac.id)
 
 **Sistem Informasi, Institut Teknologi Sepuluh Nopember (ITS)**  
 Sukolilo, Surabaya, 60111, Indonesia.
