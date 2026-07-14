@@ -1,26 +1,25 @@
-# Dilated-Convolutional Recurrent Neural Network (D-CRNN) untuk Klasifikasi Genre Musik
+# Dilated-Convolutional Recurrent Neural Network (D-CRNN) for Music Genre Classification
 
-Repository ini berisi implementasi resmi dan dokumentasi dari paper penelitian berjudul **"Dilated-Convolutional Recurrent Neural Network untuk Klasifikasi Genre Musik"** yang diterbitkan pada **Jurnal Teknik Informatika dan Sistem Informasi (JuTISI)**, Vol. 10, No. 3, Desember 2024.
+This repository contains the official implementation and documentation of the research paper titled **"Dilated-Convolutional Recurrent Neural Network untuk Klasifikasi Genre Musik"** published in **Jurnal Teknik Informatika dan Sistem Informasi (JuTISI)**, Vol. 10, No. 3, December 2024.
 
-Penelitian ini mengevaluasi penggunaan arsitektur **Dilated-Convolutional Recurrent Neural Network (D-CRNN)** guna mengklasifikasikan genre musik secara otomatis. Metode ini menggabungkan keunggulan **Dilated-CNN** dalam menangkap konteks temporal yang lebih panjang dengan kemampuan pengenalan urutan temporal dari **CRNN**. 
+This study evaluates the use of the **Dilated-Convolutional Recurrent Neural Network (D-CRNN)** architecture to automatically classify music genres. This method combines the advantages of **Dilated-CNN** in capturing longer temporal contexts with the temporal sequence recognition capabilities of **CRNN**. 
 
-Dengan menggunakan dataset **GTZAN**, ekstraksi fitur **Mel-Frequency Cepstral Coefficients (MFCC)**, dan mekanis augmentasi data **sliding-window**, model terbaik yang diusulkan (**MobileNetV2 + D-CRNN**) berhasil mencapai akurasi sebesar **89%**, mengungguli berbagai metode klasifikasi genre musik pada penelitian-penelitian sebelumnya.
-
----
-
-## 👥 Penulis & Afiliasi
-
-*   **Mochammad Rizqul Fatichin** (Corresponding Author: 6026231032@student.its.ac.id)
-*   **Alfado Rafly Hermawan** (6026231041@student.its.ac.id)
-*   **Raynaldi Anggiat Samuel Siahaan** (5026201037@student.its.ac.id)
-*   **Rarasmaya Indraswari** (raras@its.ac.id)
-
-**Sistem Informasi, Institut Teknologi Sepuluh Nopember (ITS)**  
-Sukolilo, Surabaya, 60111, Indonesia.
+Utilizing the **GTZAN** dataset, **Mel-Frequency Cepstral Coefficients (MFCC)** feature extraction, and a **sliding-window** data augmentation mechanism, the best proposed model (**MobileNetV2 + D-CRNN**) successfully achieved an accuracy of **89%**, outperforming various music genre classification methods from prior research.
 
 ---
 
-## 📌 Abstrak / Abstract
+## 👥 Authors & Affiliations
+
+* **Mochammad Rizqul Fatichin** (Corresponding Author: 6026231032@student.its.ac.id)
+* **Alfado Rafly Hermawan** (6026231041@student.its.ac.id)
+* **Raynaldi Anggiat Samuel Siahaan** (5026201037@student.its.ac.id)
+* **Rarasmaya Indraswari** (raras@its.ac.id)
+
+**Department of Information Systems, Institut Teknologi Sepuluh Nopember (ITS)** Sukolilo, Surabaya, 60111, Indonesia.
+
+---
+
+## 📌 Abstract
 
 ### Bahasa Indonesia
 Dalam era digital, pemanfaatan teknologi untuk mengelompokkan genre musik secara otomatis menjadi sangat penting, terutama untuk aplikasi seperti rekomendasi musik, analisis tren musik, dan pengelolaan perpustakaan musik digital. Penelitian ini mengevaluasi penggunaan *Dilated-Convolutional Recurrent Neural Network* (D-CRNN) dalam mengklasifikasi genre musik. Metode ini menggabungkan keunggulan Dilated-CNN dalam menangkap konteks temporal yang lebih panjang dengan kemampuan pengenalan urutan temporal dari CRNN. Data yang digunakan adalah dataset GTZAN yang terdiri dari 1.000 rekaman audio berdurasi 30 detik, dikategorikan ke dalam 10 genre musik. Proses data preprocessing melibatkan konversi rekaman audio menjadi gambar *Mel-Frequency Cepstral Coefficients* (MFCC). Model diuji menggunakan data tanpa augmentasi dan dengan augmentasi, menghasilkan total 15.991 gambar untuk pelatihan. Hasil penelitian menunjukkan bahwa penggunaan D-CRNN dapat meningkatkan akurasi klasifikasi genre musik dibandingkan dengan metode CRNN konvensional.
@@ -30,107 +29,107 @@ Dalam era digital, pemanfaatan teknologi untuk mengelompokkan genre musik secara
 
 ---
 
-## 🚀 Alur Penelitian (Methodology)
+## 🚀 Research Workflow (Methodology)
 
-Alur penelitian terdiri dari tiga tahapan utama:
-1.  **Data Preprocessing**: Mengonversi audio mentah menjadi representasi visual MFCC.
-2.  **Klasifikasi Genre Audio**: Melatih model deep learning menggunakan arsitektur dasar D-CRNN serta pendekatan transfer learning (MobileNetV2 + D-CRNN dan Xception + D-CRNN).
-3.  **Analisis Hasil**: Mengevaluasi metrik akurasi, presisi, recall, dan F1-Score serta membandingkannya dengan penelitian terdahulu.
+The research workflow consists of three main stages:
+1.  **Data Preprocessing**: Converting raw audio into MFCC visual representations.
+2.  **Audio Genre Classification**: Training deep learning models using the core D-CRNN architecture alongside transfer learning approaches (MobileNetV2 + D-CRNN and Xception + D-CRNN).
+3.  **Results Analysis**: Evaluating metrics such as accuracy, precision, recall, and F1-Score, and comparing them with previous baseline studies.
 
 ```
-┌──────────────────┐      ┌────────────────────┐      ┌─────────────────────────┐      ┌────────────────┐
-│   GTZAN Audio    │ ───> │ Data Preprocessing │ ───> │ Klasifikasi Genre Audio │ ───> │ Analisis Hasil │
-│     Dataset      │      │       (MFCC)       │      │        (D-CRNN)         │      │  & Evaluasi    │
-└──────────────────┘      └────────────────────┘      └─────────────────────────┘      └────────────────┘
+┌──────────────────┐      ┌────────────────────┐      ┌────────────────────────────┐      ┌──────────────────┐
+│   GTZAN Audio    │ ───> │ Data Preprocessing │ ───> │ Audio Genre Classification │ ───> │ Results Analysis │
+│     Dataset      │      │       (MFCC)       │      │          (D-CRNN)          │      │   & Evaluation   │
+└──────────────────┘      └────────────────────┘      └────────────────────────────┘      └──────────────────┘
 ```
 
 ---
 
 ## 📊 Dataset & Preprocessing
 
-### 1. Dataset GTZAN
-Dataset yang digunakan adalah **GTZAN - Genre Classification Dataset** yang diunduh dari Kaggle.
-*   **Total Audio**: 1.000 file audio berdurasi 30 detik.
-*   **Format**: `.wav` (Sampling rate: 22.050 Hz, mono channel).
-*   **Jumlah Genre**: 10 genre (masing-masing 100 trek): *blues, classical, country, disco, hip-hop, jazz, metal, pop, reggae, dan rock*.
+### 1. GTZAN Dataset
+The dataset used is the **GTZAN - Genre Classification Dataset**, sourced from Kaggle.
+* **Total Audio**: 1,000 audio files, each 30 seconds long.
+* **Format**: `.wav` (Sampling rate: 22,050 Hz, mono channel).
+* **Number of Genres**: 10 genres (100 tracks each): *blues, classical, country, disco, hip-hop, jazz, metal, pop, reggae, and rock*.
 
-### 2. Preprocessing & Augmentasi Data (Sliding-Window)
-Audio dikonversi menjadi gambar representasi visual **Mel-Frequency Cepstral Coefficients (MFCC)**. Pengujian dilakukan pada dua skenario data:
-*   **Tanpa Augmentasi**: File audio 30 detik langsung diubah menjadi gambar MFCC. Total: **1.000 gambar**.
-*   **Dengan Augmentasi (Sliding-Window)**: Audio dipotong menjadi segmen berdurasi 15 detik dengan pergeseran (*stride*) interval 1 detik. Dari 1 file audio berdurasi 30 detik, dihasilkan **16 segmen audio berdurasi 15 detik**. Total: **15.991 gambar** MFCC.
+### 2. Preprocessing & Data Augmentation (Sliding-Window)
+Audio files are converted into **Mel-Frequency Cepstral Coefficients (MFCC)** visual spectrogram images. Experiments were conducted under two data scenarios:
+* **Without Augmentation**: The 30-second audio files were directly converted into MFCC images. Total: **1,000 images**.
+* **With Augmentation (Sliding-Window)**: The audio tracks were sliced into 15-second segments using a 1-second interval shift (*stride*). From a single 30-second audio file, **16 segments of 15-second audio** were generated. Total: **15,991 MFCC images**.
 
-### 3. Normalisasi & Split Data
-*   **Normalisasi**: Skala warna piksel gambar MFCC (0-255 RGB) dinormalisasi ke rentang **[0, 1]**.
-*   **Input Dimensions**: Gambar disesuaikan dengan dimensi input arsitektur, yaitu **(224, 224, 3)** dan **(385, 1162, 3)**.
-*   **Rasio Data**: Dibagi menjadi Data Latih dan Data Uji dengan rasio **80:20**.
-    *   *Tanpa Augmentasi*: Latih = 800 gambar, Uji = 200 gambar.
-    *   *Dengan Augmentasi*: Latih = 12.793 gambar, Uji = 3.198 gambar.
+### 3. Normalization & Data Split
+* **Normalization**: The pixel color scales of the MFCC images (0-255 RGB) were normalized to the range **[0, 1]**.
+* **Input Dimensions**: Images were resized to fit the respective architecture input dimensions: **(224, 224, 3)** and **(385, 1162, 3)**.
+* **Data Ratio**: Partitioned into Training and Testing sets using an **80:20** split ratio.
+    * *Without Augmentation*: Train = 800 images, Test = 200 images.
+    * *With Augmentation*: Train = 12,793 images, Test = 3,198 images.
 
 ---
 
-## 🧠 Arsitektur Model
+## 🧠 Model Architecture
 
-Penelitian ini mengevaluasi beberapa arsitektur model:
+This study evaluates several model architectures:
 
-### 1. Model Dasar D-CRNN
-Menggabungkan lapisan **Dilated Convolutional 2D (DCNN)** dengan **LSTM** dan **Dense Layer (Softmax)**. Dilatasi pada konvolusi memperbesar *receptive field* secara efisien tanpa menambah parameter, sehingga mengurangi risiko *overfitting*.
-*   *Konfigurasi Terbaik*: 3 Lapisan Konvolusi dengan filter `(16-32-32)`, *dilation rate* `(2-2-2)`, LSTM `128` unit, dan Dense `128` unit.
+### 1. Baseline D-CRNN Model
+Combines **Dilated Convolutional 2D (DCNN)** layers with **LSTM** and a **Dense Layer (Softmax)**. Dilation in convolutions efficiently expands the *receptive field* without increasing parameters, thereby reducing the risk of overfitting.
+* *Optimal Configuration*: 3 Convolutional Layers with filters `(16-32-32)`, a *dilation rate* of `(2-2-2)`, `128` LSTM units, and `128` Dense units.
 
 ### 2. MobileNetV2 + D-CRNN (Transfer Learning)
-Model MobileNetV2 digunakan sebagai ekstraktor fitur gambar MFCC. Kompleksitas dipotong pada layer `block_13_expand_relu`, kemudian disambung ke arsitektur D-CRNN.
+The MobileNetV2 model serves as the feature extractor for the MFCC images. The feature map extraction is truncated at the `block_13_expand_relu` layer, which is then connected to the D-CRNN architecture.
 
 ### 3. Xception + D-CRNN (Transfer Learning)
-Model Xception digunakan sebagai ekstraktor fitur gambar MFCC. Kompleksitas dipotong pada layer `add_10`, kemudian disambung ke arsitektur D-CRNN.
+The Xception model serves as the feature extractor for the MFCC images. The feature map extraction is truncated at the `add_10` layer, which is then connected to the D-CRNN architecture.
 
-### Variabel Tetap Penelitian (Hyperparameters)
-| Parameter | Nilai |
+### Fixed Research Variables (Hyperparameters)
+| Parameter | Value |
 | :--- | :--- |
 | **Train:Test Split** | 80:20 |
 | **Batch Size** | 32 |
 | **Learning Rate** | 0.001 |
-| **Epoch** | 30 |
+| **Epochs** | 30 |
 | **Optimizer** | Adam |
 
 ---
 
-## 📈 Hasil Penelitian & Evaluasi
+## 📈 Research Results & Evaluation
 
-### 1. Performa Model Tanpa Augmentasi Data (Overfitting)
-Model yang dilatih tanpa augmentasi mengalami kendala *overfitting* yang cukup berat (akurasi latih mendekati 100%, namun akurasi validasi rendah):
-*   **Baseline CRNN**: Akurasi Validasi **27,50%**
-*   **Baseline D-CRNN**: Akurasi Validasi **35,00%** (Menggunakan 3 lapis konvolusi dengan filter 16-32-32 dan dilation rate 2-2-2)
-*   **MobileNetV2 + D-CRNN**: Akurasi Validasi **44,50%** (F1-Score 44%)
-*   **Xception + D-CRNN**: Akurasi Validasi **54,00%** (F1-Score 56%)
+### 1. Model Performance Without Data Augmentation (Overfitting)
+Models trained without augmentation experienced severe *overfitting* issues (training accuracy approached 100%, but validation accuracy remained low):
+* **Baseline CRNN**: Validation Accuracy **27.50%**
+* **Baseline D-CRNN**: Validation Accuracy **35.00%** (Using 3 convolution layers with 16-32-32 filters and a 2-2-2 dilation rate)
+* **MobileNetV2 + D-CRNN**: Validation Accuracy **44.50%** (F1-Score 44%)
+* **Xception + D-CRNN**: Validation Accuracy **54.00%** (F1-Score 56%)
 
-### 2. Performa Model Dengan Augmentasi Data (Sliding-Window)
-Setelah dilatih menggunakan data hasil augmentasi, variasi data yang melimpah berhasil mengatasi overfitting secara signifikan dan menurunkan *validation loss*.
+### 2. Model Performance With Data Augmentation (Sliding-Window)
+After training with the augmented dataset, the abundant data variation successfully mitigated overfitting, leading to a significant drop in validation loss.
 
-| Model | Akurasi | Presisi | Recall | F1-Score (Macro Avg) |
+| Model | Accuracy | Precision | Recall | F1-Score (Macro Avg) |
 | :--- | :---: | :---: | :---: | :---: |
-| **Model Dasar D-CRNN** | 77% | 79% | 79% | 77% |
+| **Baseline D-CRNN Model** | 77% | 79% | 79% | 77% |
 | **Xception + D-CRNN** | 80% | 84% | 80% | 80% |
 | **MobileNetV2 + D-CRNN** | **89%** | **89%** | **89%** | **89%** |
 
-*Catatan: Ketiga model menunjukkan performa klasifikasi yang sangat baik pada hampir seluruh genre, kecuali untuk genre **rock** yang terdeteksi kurang optimal pada Model Dasar D-CRNN dan Xception + D-CRNN.*
+*Note: All three models demonstrated exceptional classification performance across almost all genres, except for the **rock** genre, which was suboptimally identified by the Baseline D-CRNN and Xception + D-CRNN models.*
 
-### 3. Perbandingan dengan Penelitian Terdahulu
-Model yang diusulkan berhasil mengungguli beberapa model klasifikasi genre musik pada dataset GTZAN dari penelitian-penelitian terdahulu:
+### 3. Comparison with Previous Studies
+The proposed model successfully outperformed several music genre classification models trained on the GTZAN dataset from prior literature:
 
-| Algoritma | Referensi | Fitur Input | Akurasi |
+| Algorithm | Reference | Input Feature | Accuracy |
 | :--- | :--- | :--- | :---: |
 | **KNN** | Jakubec & Chmulik (2019) | MFCC | 69% |
 | **CNN** | Dong (2019) | Spectrogram | 70% |
 | **CRNN** | Adiyansjah et al. (2019) | Mel-Spectrogram | 74% |
 | **GLR-CRNN** | Ashraf et al. (2020) | Mel-Spectrogram | 87% |
-| **D-CRNN (Ousulan)** | Fatichin et al. (2024) | MFCC | **77%** |
-| **Xception + D-CRNN (Usulan)** | Fatichin et al. (2024) | MFCC | **80%** |
-| **MobileNetV2 + D-CRNN (Usulan)** | Fatichin et al. (2024) | MFCC | **89%** |
+| **D-CRNN (Proposed)** | Fatichin et al. (2024) | MFCC | **77%** |
+| **Xception + D-CRNN (Proposed)** | Fatichin et al. (2024) | MFCC | **80%** |
+| **MobileNetV2 + D-CRNN (Proposed)** | Fatichin et al. (2024) | MFCC | **89%** |
 
 ---
 
-## 📝 Sitasi (Citation)
+## 📝 Citation
 
-Jika Anda menggunakan metode atau hasil penelitian ini dalam karya akademis Anda, harap berikan sitasi sebagai berikut:
+If you use this method or these findings in your academic work, please cite it as follows:
 
 ```bibtex
 @article{fatichin2024dcrnn,
